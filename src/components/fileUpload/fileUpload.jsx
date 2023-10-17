@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { DragAndDrop } from "../DragAndDrop/dragAndDrop";
 import "./fileUpload.css"
-import { Carousel } from "../carousel/carousel";
 import { CopiedCarousel } from "../carousel/copiedCarousel";
 
 export function FileUpload() {
