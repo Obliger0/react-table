@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { apiData } from "../../Data/apiData";
 import { ModalComp } from "../modal/modal";
 import { Pagination1 } from "../Pagination/pagination1";
@@ -11,9 +11,10 @@ export function TableCompFromApi({ openModal, setOpenModal }) {
   const pageSize = 5;
   const pageOptions = 5;
 
-  // useEffect(() => {
-  //   setDataInState(apiData);
-  // }, [header]);
+  useEffect(() => {
+    setDataInState(apiData);
+    // eslint-disable-next-line
+  }, []);
 
   function getRows(items, columnTypes) {
     const columnNames = Object.keys(columnTypes);
@@ -39,7 +40,6 @@ export function TableCompFromApi({ openModal, setOpenModal }) {
     setHeader(columnData);
     setBody(rowData);
   }
-  setDataInState(apiData);
 
   return (
     <>
