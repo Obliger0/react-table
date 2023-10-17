@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { apiData } from "../../Data/apiData";
 import { ModalComp } from "../modal/modal";
 import { Pagination1 } from "../Pagination/pagination1";
@@ -11,9 +11,9 @@ export function TableCompFromApi({ openModal, setOpenModal }) {
   const pageSize = 5;
   const pageOptions = 5;
 
-  useEffect(() => {
-    setDataInState(apiData);
-  }, []);
+  // useEffect(() => {
+  //   setDataInState(apiData);
+  // }, [header]);
 
   function getRows(items, columnTypes) {
     const columnNames = Object.keys(columnTypes);
@@ -39,6 +39,7 @@ export function TableCompFromApi({ openModal, setOpenModal }) {
     setHeader(columnData);
     setBody(rowData);
   }
+  setDataInState(apiData);
 
   return (
     <>
@@ -47,7 +48,7 @@ export function TableCompFromApi({ openModal, setOpenModal }) {
       <button>Add Row</button>
       <table className="table-container">
         <thead>
-          {header.map((col, idx) => {
+          {rowPageData.map((col, idx) => {
             // console.log({ col });
             return (
               <th>
@@ -93,15 +94,16 @@ export function TableCompFromApi({ openModal, setOpenModal }) {
                   })}
                 </tr>
               );
+            else return "";
           })}
         </tbody>
       </table>
-      {/* <Pagination
+      <Pagination
         data={body}
         pageSize={pageSize}
         pageOptions={pageOptions}
         onChange={(data) => setRowPageData(data)}
-      /> */}
+      />
       <Pagination1
         data={body}
         pageSize={pageSize}
