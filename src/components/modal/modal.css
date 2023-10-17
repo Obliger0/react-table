@@ -1,0 +1,35 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.modal-div {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    justify-content: end;
+    top: 50vh;
+    left: 50vw;
+    text-align: center;
+    background-color: #84b0a3;
+    transform: translate(-50%, -50%);
+    padding: 20px;
+    border-radius: 10px;
+    font-size: 20px;
+}
+
+.closeBtn {
+    display: flex;
+    justify-content: end;
+    width: 100%;
+
+    >button {
+        width: 40px;
+        font-size: 25px;
+        box-shadow: 0px 2px 8px 2px #fcffff;
+        background-color: transparent;
+        border-radius: 10px;
+        border-style: none;
+    }
+}

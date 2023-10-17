@@ -1,0 +1,33 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.drag-and-drop-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 30px;
+    border-top: 3px dashed white;
+    border-bottom: 3px dashed white;
+    color: white;
+}
+
+.onDrag-enter {
+    border-top: 3px dashed #7db0ee;
+    border-bottom: 3px dashed #7db0ee;
+    color: #7db0ee;
+}
+
+.file-input {
+    display: none;
+}
+
+.file-label {
+    width: 100%;
+    text-align: center;
+    padding: 10px;
+    font-size: 30px;
+}
